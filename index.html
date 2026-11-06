@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TNK Mobile — Download do aplicativo</title>
+<meta name="description" content="Baixe a versão mais recente do TNK Mobile (força de vendas do Master Key) para Android.">
+<meta property="og:title" content="TNK Mobile — Download do aplicativo">
+<meta property="og:description" content="Baixe a versão mais recente do TNK Mobile para Android.">
+<meta property="og:image" content="https://mobile.tnksystem.com.br/icone.png">
+<link rel="icon" href="icone.png">
+<style>
+  :root{
+    --primary:#00AEEF; --primary-dark:#0097D1;
+    --accent:#0A2744; --accent-dark:#061729;
+    --bg:#F5F7FA; --surface:#FFFFFF; --border:#E2E8F0;
+    --text:#1E293B; --text-2:#64748B; --text-3:#94A3B8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Segoe UI",Roboto,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 20px}
+
+  header{
+    background:linear-gradient(160deg,var(--accent) 0%,var(--accent-dark) 100%);
+    color:#fff; padding:40px 0 56px; text-align:center;
+  }
+  header img.logo{height:96px; width:auto; margin-bottom:18px}
+  header h1{margin:0; font-size:30px; letter-spacing:-.4px; font-weight:700}
+  header p{margin:8px 0 0; color:#B9CBDC; font-size:16px}
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    box-shadow:0 12px 32px rgba(10,39,68,.10);
+    margin-top:-32px; padding:32px; text-align:center;
+  }
+  .badge{
+    display:inline-block; background:rgba(0,174,239,.12); color:var(--primary-dark);
+    font-size:13px; font-weight:600; padding:5px 14px; border-radius:999px; margin-bottom:18px;
+  }
+  .card h2{margin:0 0 6px; font-size:22px}
+  .meta{color:var(--text-2); font-size:14px; margin:0 0 24px}
+  .meta span{white-space:nowrap}
+  .dot{color:var(--text-3); margin:0 8px}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--primary); color:#fff; text-decoration:none; font-weight:600; font-size:17px;
+    padding:16px 38px; border-radius:14px; transition:background .15s, transform .15s;
+    box-shadow:0 6px 18px rgba(0,174,239,.35);
+  }
+  .btn:hover{background:var(--primary-dark); transform:translateY(-1px)}
+  .btn svg{width:20px; height:20px; fill:currentColor}
+  .hint{margin:14px 0 0; font-size:13px; color:var(--text-3)}
+
+  .qr{
+    margin-top:32px; padding-top:28px; border-top:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap;
+  }
+  .qr .codigo svg{width:132px; height:132px; border:1px solid var(--border); border-radius:12px; padding:8px; background:#fff; display:block}
+  .qr .texto{text-align:left; max-width:280px}
+  .qr strong{display:block; font-size:15px; margin-bottom:4px}
+  .qr p{margin:0; font-size:13px; color:var(--text-2)}
+
+  section{margin:44px 0}
+  section h3{font-size:18px; margin:0 0 18px}
+  ol.steps{margin:0; padding:0; list-style:none; counter-reset:s}
+  ol.steps li{
+    counter-increment:s; position:relative; padding:0 0 0 46px; margin-bottom:18px;
+    font-size:15px; color:var(--text-2);
+  }
+  ol.steps li::before{
+    content:counter(s); position:absolute; left:0; top:-1px;
+    width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff;
+    font-size:14px; font-weight:600; display:flex; align-items:center; justify-content:center;
+  }
+  ol.steps b{color:var(--text)}
+
+  .note{
+    background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--primary);
+    border-radius:12px; padding:16px 20px; font-size:14px; color:var(--text-2);
+  }
+  .note + .note{margin-top:12px}
+  .note b{color:var(--text)}
+
+  footer{
+    border-top:1px solid var(--border); margin-top:48px; padding:26px 0 40px;
+    text-align:center; font-size:13px; color:var(--text-3);
+  }
+  footer a{color:var(--text-2)}
+
+  @media (max-width:600px){
+    header{padding:32px 0 48px}
+    header img.logo{height:76px}
+    header h1{font-size:24px}
+    .card{padding:26px 20px}
+    .btn{width:100%; padding:16px 20px}
+    .qr .texto{text-align:center; max-width:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="logo.png" alt="TNK System">
+    <h1>TNK Mobile</h1>
+    <p>Pedidos, clientes e condicionais do Master Key no celular</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="card">
+    <span class="badge">Versão mais recente</span>
+    <h2 id="version">Carregando…</h2>
+    <p class="meta" id="meta"><span>Android 6.0 ou superior</span></p>
+
+    <a class="btn" id="download" href="https://github.com/tnksystem/tnk-mobile-releases/releases/latest">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z"/></svg>
+      Baixar aplicativo
+    </a>
+    <p class="hint">Arquivo .apk — instalação direta, sem Play Store</p>
+
+    <div class="qr" id="qr" hidden>
+      <div class="codigo" id="qr-codigo" role="img" aria-label="QR Code para esta página"></div>
+      <div class="texto">
+        <strong>Instalando pelo celular?</strong>
+        <p>Aponte a câmera do aparelho para o código e abra esta página direto no dispositivo.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h3>Como instalar</h3>
+    <ol class="steps">
+      <li>Toque em <b>Baixar aplicativo</b> e aguarde o download terminar.</li>
+      <li>Abra o arquivo baixado (fica em <b>Downloads</b> ou na notificação do navegador).</li>
+      <li>O Android vai perguntar se permite instalar apps desta origem — toque em <b>Configurações</b>, ative <b>Permitir desta fonte</b> e volte.</li>
+      <li>Confirme em <b>Instalar</b> e depois em <b>Abrir</b>. No celular o ícone aparece como <b>TNK System</b>.</li>
+      <li>No primeiro acesso, informe o <b>IP e a porta do servidor da loja</b> e ative o aparelho com o <b>CNPJ e a senha</b> passados pela TNK System.</li>
+    </ol>
+    <div class="note">
+      <b>Atualizações:</b> depois da primeira instalação não é preciso voltar aqui. Quando a loja recebe uma versão nova, o próprio aplicativo avisa e faz a atualização por dentro.
+    </div>
+    <div class="note">
+      <b>Já usa o TNK Mobile?</b> Não desinstale antes de atualizar: a instalação por cima mantém os dados e a ativação do aparelho.
+    </div>
+  </section>
+
+  <section>
+    <h3>Novidades desta versão</h3>
+    <div class="note" id="notes">Carregando informações da versão…</div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    TNK System — TNK Mobile<br>
+    Suporte: <a href="mailto:suporte@tnksystem.com.br">suporte@tnksystem.com.br</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function () {
+  var API = 'https://api.github.com/repos/tnksystem/tnk-mobile-releases/releases/latest';
+  var SITE = 'https://mobile.tnksystem.com.br/';
+  var elVersion = document.getElementById('version');
+  var elMeta    = document.getElementById('meta');
+  var elBtn     = document.getElementById('download');
+  var elNotes   = document.getElementById('notes');
+
+  // QR Code desta página (some se a biblioteca não carregar)
+  try {
+    var qr = qrcode(0, 'M');
+    qr.addData(SITE);
+    qr.make();
+    document.getElementById('qr-codigo').innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+    document.getElementById('qr').hidden = false;
+  } catch (e) { /* sem QR */ }
+
+  function formatSize(bytes) {
+    if (!bytes) return null;
+    return (bytes / 1048576).toFixed(1).replace('.', ',') + ' MB';
+  }
+
+  function formatDate(iso) {
+    if (!iso) return null;
+    var d = new Date(iso);
+    if (isNaN(d)) return null;
+    return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  }
+
+  // Notas da release (markdown simples) viram uma lista.
+  function renderNotes(body) {
+    var linhas = (body || '').split('\n')
+      .map(function (l) { return l.replace(/^\s*[-*]\s+/, '').trim(); })
+      .filter(function (l) { return l && !/^#{1,6}\s/.test(l); });
+    if (!linhas.length) {
+      elNotes.textContent = 'Correções e melhorias gerais.';
+      return;
+    }
+    var ul = document.createElement('ul');
+    ul.style.margin = '0';
+    ul.style.paddingLeft = '20px';
+    linhas.slice(0, 8).forEach(function (l) {
+      var li = document.createElement('li');
+      li.textContent = l;
+      ul.appendChild(li);
+    });
+    elNotes.textContent = '';
+    elNotes.appendChild(ul);
+  }
+
+  // Sem a API do GitHub (offline ou limite), o botão continua indo para a
+  // última release.
+  function fallback() {
+    elVersion.textContent = 'TNK Mobile para Android';
+    elNotes.textContent = 'Consulte as notas da versão na página de releases.';
+  }
+
+  fetch(API, { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rel) {
+      var versao = String(rel.tag_name || rel.name || '').replace(/^v/i, '');
+      var apk = (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
+
+      elVersion.textContent = versao ? 'Versão ' + versao : 'TNK Mobile para Android';
+
+      var partes = [];
+      var data = formatDate(rel.published_at);
+      if (data) partes.push('Publicado em ' + data);
+      var tam = apk && formatSize(apk.size);
+      if (tam) partes.push(tam);
+      partes.push('Android 6.0 ou superior');
+      elMeta.innerHTML = partes.map(function (p) { return '<span>' + p + '</span>'; })
+        .join('<span class="dot">•</span>');
+
+      if (apk) elBtn.href = apk.browser_download_url;
+      renderNotes(rel.body);
+    })
+    .catch(fallback);
+})();
+</script>
+
+</body>
+</html>
